@@ -7,121 +7,142 @@
   <meta name="description" content="Portfólio do Carlos Júnior — análises de dados, automação e IA." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Preload da capa -->
+  <link rel="preload" as="image" href="https://carloshpjunior.github.io/portfolio-cover-gridlines-1200.jpg?v=3">
+
   <style>
-    :root {
-      --bg: #0b0d10;
-      --card: #141820;
-      --muted: #a7b0c0;
-      --text: #e8edf5;
-      --brand: #4f46e5;
-      --brand-2: #22d3ee;
-      --ring: rgba(79,70,229,.35);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root{
+      --bg:#0b0d10; --card:#141820; --muted:#a7b0c0; --text:#e8edf5;
+      --brand:#4f46e5; --brand-2:#22d3ee; --ring:rgba(79,70,229,.35);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    * { box-sizing: border-box; }
-    html, body { margin:0; height:100%; scroll-behavior:smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #0b0d10 0, #0e1015 100%); color: var(--text); }
-    a { color: inherit; text-decoration: none; }
-
-    /* Header */
-    .nav { position: sticky; top:0; z-index: 50; backdrop-filter: blur(8px); background: rgba(11,13,16,.6); border-bottom: 1px solid rgba(255,255,255,.06); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; padding: 14px 20px; }
-    .brand { font-weight:800; letter-spacing:.2px; }
-    .menu a{ opacity:.85; margin-left:20px; }
-        .social{display:inline-flex;gap:12px;margin-left:12px;vertical-align:middle}
-    .social a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;opacity:.9}
-    .social a:hover{opacity:1;transform:translateY(-1px)}
-    .social svg{width:20px;height:20px;fill:currentColor}
-
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
-    .hero { text-align:center; padding: 34px 0 16px; }
-    .hero h1 { font-size: clamp(26px, 4vw, 44px); margin:.2em 0; }
-    .hero p { color: var(--muted); max-width: 680px; margin: 8px auto 0; }
-
-    /* Tabs */
-    .tabs { display:flex; gap:14px; justify-content:center; margin: 26px 0 10px; flex-wrap: wrap; }
-    .tab { border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); padding: 8px 14px; border-radius: 999px; cursor:pointer; font-weight:600; color: var(--muted); }
-    .tab.active { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; border-color: transparent; box-shadow: 0 0 0 6px var(--ring); }
-
-    /* Grid */
-    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 22px; margin-top: 22px; }
-    .card { grid-column: span 12; background: var(--card); border:1px solid rgba(255,255,255,.06); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); transition: transform .25s ease, box-shadow .25s ease; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,.5); }
-    .thumb { position:relative; height: 200px; background-size: cover; background-position: center; }
-    .badge { position:absolute; top:12px; left:12px; background: rgba(0,0,0,.55); color:#fff; padding:6px 10px; border-radius: 999px; font-size: 12px; border:1px solid rgba(255,255,255,.12); }
-    .content { padding: 16px; }
-    .title { font-size: 18px; font-weight: 700; margin: 2px 0 6px; }
-    .desc { color: var(--muted); font-size: 14px; line-height: 1.5; }
-    .actions { display:flex; gap: 10px; margin-top: 14px; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius: 10px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); font-weight:600; }
-    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color: white; }
-
-    @media (min-width: 640px) { .card { grid-column: span 6; } }
-    @media (min-width: 1000px) { .card { grid-column: span 4; } }
-
-    footer { text-align:center; color: var(--muted); margin-top: 46px; }
-  
-    /* evita que o header sticky cubra o título ao rolar para uma âncora */
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0b0d10 0,#0e1015 100%);color:var(--text)}
+    a{color:inherit;text-decoration:none}
     [id]{scroll-margin-top:84px}
-    /* Popover estilo balão para o link Sobre */
-    .has-popover{position:relative}
-    .has-popover::after{content:attr(data-popover);position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,12,16,.98);color:#e8edf5;border:1px solid rgba(255,255,255,.08);padding:12px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.45);font-size:13px;line-height:1.45;width:max-content;max-width:320px;opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:1000}
-    .has-popover::before{content:"";position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:rgba(10,12,16,.98);border-left:1px solid rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08);opacity:0;transition:opacity .2s ease;z-index:1001}
-    .has-popover.open::after,.has-popover:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
-    .has-popover.open::before,.has-popover:hover::before{opacity:1}
-    /* Mobile nav */
-    .nav-toggle{display:none;background:transparent;border:0;width:36px;height:36px;align-items:center;justify-content:center;gap:5px;cursor:pointer}
-    .nav-toggle span{display:block;width:22px;height:2px;background:var(--text)}
-    .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--card);border-top:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);padding:12px 16px}
-    .mobile-menu a{display:block;padding:10px 6px;border-radius:8px}
-    .mobile-menu .social-row{display:flex;gap:12px;padding-top:8px}
-    .mobile-menu.open{display:block}
-    @media (max-width: 768px){
-      .menu{display:none}
-      .social{display:none}
-      .nav-toggle{display:inline-flex}
-      .brand{font-size:16px;line-height:1.2}
-      .nav-inner{position:relative}
-    }
-    @media (min-width: 769px){ .mobile-menu{display:none!important} }
-  .contato-link{margin-left:28px}
-    /* NAV RESET / FIX */
-    .nav .menu a{opacity:.85;margin-left:20px;text-decoration:none}
-    .nav .contato-link{margin-left:28px}
-    .nav .social{display:inline-flex;gap:12px;margin-left:12px;vertical-align:middle}
-    .nav .social svg{width:20px;height:20px}
 
-    /* Mobile nav */
+    /* ======= HEADER (web e mobile) ======= */
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(11,13,16,.65);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
+    .brand{font-weight:800;letter-spacing:.2px;white-space:nowrap}
+    .menu{display:flex;align-items:center;gap:20px;flex-wrap:nowrap}
+    .menu a{opacity:.9}
+    .menu a:hover{opacity:1}
+    /* popover desktop */
+    .with-popover{position:relative}
+    .with-popover .popover-card{
+      position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);
+      background:rgba(10,12,16,.98);color:#e8edf5;border:1px solid rgba(255,255,255,.08);
+      padding:12px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.45);
+      font-size:13px;line-height:1.45;width:max-content;max-width:360px;opacity:0;pointer-events:none;
+      transition:opacity .18s ease, transform .18s ease;z-index:1000
+    }
+    .with-popover .popover-card::before{
+      content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);
+      width:12px;height:12px;background:rgba(10,12,16,.98);border-left:1px solid rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08)
+    }
+    .with-popover:hover .popover-card,
+    .with-popover:focus-within .popover-card{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+    /* hambúrguer */
     .nav-toggle{display:none;background:transparent;border:0;width:36px;height:36px;align-items:center;justify-content:center;gap:5px;cursor:pointer}
     .nav-toggle span{display:block;width:22px;height:2px;background:var(--text)}
+    /* mobile menu */
     .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--card);border-top:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);padding:12px 16px}
-    .mobile-menu a{display:block;padding:10px 6px;border-radius:8px}
-    .mobile-menu .social-row{display:flex;gap:12px;padding-top:8px}
-    .mobile-menu .social-row svg{width:22px;height:22px}
     .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:10px 6px;border-radius:8px}
+    .mobile-menu .with-popover .popover-card{position:static;transform:none;background:transparent;border:0;box-shadow:none;padding:0;opacity:1;pointer-events:auto}
+    .mobile-menu .with-popover .actions{display:flex;gap:12px;padding-top:8px}
+
     @media (max-width: 768px){
       .menu{display:none}
       .nav-toggle{display:inline-flex}
       .brand{font-size:16px;line-height:1.2}
       .nav-inner{position:relative}
     }
-    @media (min-width: 769px){ .mobile-menu{display:none!important} }
-    /* Popover cartão para Contato */
-    .with-popover{position:relative;display:inline-block}
-    .with-popover .popover-card{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,12,16,.98);color:#e8edf5;border:1px solid rgba(255,255,255,.08);padding:12px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:1000}
-    .with-popover .popover-card::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:rgba(10,12,16,.98);border-left:1px solid rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08)}
-    .with-popover.open .popover-card,.with-popover:hover .popover-card,.with-popover:focus-within .popover-card{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-    @media (max-width:768px){
-      .mobile-menu .with-popover .popover-card{position:static;transform:none;width:100%;margin-top:8px}
-      .mobile-menu .with-popover .actions{display:flex;gap:12px}
+
+    /* ======= GRID/CARDS ======= */
+    .container{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
+    .hero{text-align:center;padding:34px 0 16px}
+    .hero h1{font-size:clamp(26px,4vw,44px);margin:.2em 0}
+    .hero p{color:var(--muted);max-width:680px;margin:8px auto 0}
+
+    .tabs{display:flex;gap:14px;justify-content:center;margin:26px 0 10px;flex-wrap:wrap}
+    .tab{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:600;color:var(--muted)}
+    .tab.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;box-shadow:0 0 0 6px var(--ring)}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;margin-top:22px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,0,.5)}
+    .thumb{position:relative;height:220px;background-size:cover;background-position:center;display:block}
+    @media (min-width:1000px){.thumb{height:240px}}
+    .badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,.12)}
+    .content{padding:16px}
+    .title{font-size:18px;font-weight:700;margin:2px 0 6px}
+    .desc{color:var(--muted);font-size:14px;line-height:1.5}
+    .actions{display:flex;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-weight:600}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:none;color:#fff}
+    @media (min-width:640px){.card{grid-column:span 6}}
+    @media (min-width:1000px){.card{grid-column:span 4}}
+
+    footer{text-align:center;color:var(--muted);margin-top:46px}
+
+    /* ======= HERO (capa) ======= */
+    .hero-cover{
+      position:relative;min-height:56vh;display:grid;place-items:center;
+      background:url('https://carloshpjunior.github.io/portfolio-cover-gridlines-1200.jpg?v=3') center/cover no-repeat !important;
+      z-index:0;
     }
-    /* ajustes finais de UX */
-    .popover-card{max-width:360px}
-    .popover-card a{color:inherit;text-decoration:none}
-    @media (max-width:768px){
-      .mobile-menu .contato-link{margin-left:0 !important}
-      .mobile-menu .with-popover{display:block}
+    .hero-cover::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.65));
+      z-index:0;pointer-events:none;
+    }
+    .hero-cover .hero-inner{position:relative;z-index:1;text-align:center;padding:40px 20px}
+    .hero-cover h1{font-size:clamp(32px,5vw,56px);margin:0 0 6px}
+    .hero-cover p{font-size:clamp(16px,2vw,22px);color:var(--muted);margin:0}
+
+    .section{margin:36px 0}
+    .panel{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+    .h-underline{display:inline-block;border-bottom:3px solid var(--brand-2);padding-bottom:6px}
+
+    .info-grid{display:grid;gap:20px}
+    @media(min-width:900px){.info-grid{grid-template-columns:1fr 1fr}}
+
+    .cv-title{text-align:center;margin:34px 0 10px}
+    .cv-sub{color:var(--muted);text-align:center;margin:-2px 0 16px}
+    .cv-grid{display:grid;gap:24px}
+    @media(min-width:1000px){.cv-grid{grid-template-columns:1fr 1fr}}
+
+    /* ======= Experiência (limpa) ======= */
+    .cv-section h3{margin:8px 0 6px}
+    .cv-job{margin:18px 0 14px}
+    .cv-job .role{font-weight:700;font-size:16px}
+    .cv-job .company{color:var(--text);opacity:.95}
+    .cv-job .meta{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+    .cv-list{padding-left:20px;margin:8px 0 0}
+    .cv-list li{margin:6px 0;line-height:1.6;color:#cfd6e4}
+    .cv-sep{height:1px;background:rgba(255,255,255,.08);margin:14px 0;border-radius:1px}
+
+    /* ======= Skills (layout + animação) ======= */
+    .skill-group{margin:18px 0 10px}
+    .skill{margin:10px 0}
+    .skill label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
+    .bar{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;position:relative}
+    .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    .w100{width:100%}.w95{width:95%}.w90{width:90%}.w85{width:85%}.w80{width:80%}.w70{width:70%}.w60{width:60%}.w50{width:50%}.w40{width:40%}.w30{width:30%}
+    .skill .bar span{position:relative;width:0}
+    .skill .bar span.animate{animation:fill-bar 1.2s ease forwards}
+    .skill .bar span.animate::after{
+      content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.25) 50%,transparent 100%);
+      transform:translateX(-100%);animation:shine 1.2s linear infinite;opacity:.5;
+    }
+    @keyframes fill-bar{to{width:var(--target,100%)}}
+    @keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+    @media (prefers-reduced-motion:reduce){
+      .skill .bar span{width:var(--target,100%)!important;animation:none!important}
+      .skill .bar span::after{display:none}
     }
   </style>
 </head>
@@ -129,20 +150,18 @@
   <!-- Navbar -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="brand">Carlos Júnior · Analista de Dados</div>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-      <nav class="menu" id="desktopMenu">
-        <a href="#">Início</a>
+      <div class="brand">    </div>
+
+      <nav class="menu" id="desktopMenu" aria-label="Principal">
+        <a href="#inicio">Início</a>
         <a href="#portfolio">Portfólio</a>
-        <span class="with-popover sobre-wrap">
-          <a href="#sobre" class="sobre-link">Sobre</a>
+        <span class="with-popover">
+          <a href="#sobre">Sobre</a>
           <div class="popover-card" role="dialog" aria-label="Sobre">
-            <a href="#sobre" class="popover-link" style="display:block;max-width:360px;text-decoration:none;color:inherit;">
-              Analista de dados focado em decisões. <strong>Clique para saber mais →</strong>
-            </a>
+            Analista de dados focado em decisões. <strong>Clique para saber mais →</strong>
           </div>
         </span>
-        <span class="with-popover contato-wrap">
+        <span class="with-popover">
           <a href="#contato" class="contato-link">Contato</a>
           <div class="popover-card" role="dialog" aria-label="Contatos rápidos">
             <div class="actions">
@@ -152,27 +171,141 @@
           </div>
         </span>
       </nav>
-    </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="mobile-menu" hidden>
-      <a href="#">Início</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#sobre">Sobre</a>
-      <span class="with-popover">
-        <a href="#contato" class="contato-link">Contato</a>
-        <div class="popover-card" role="dialog" aria-label="Contatos rápidos">
-          <div class="actions">
-            <a class="btn" href="https://www.linkedin.com/in/carlos-henrique-0266481a1" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn" href="https://wa.me/5516992833083" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="mobile-menu" hidden>
+        <a href="#inicio">Início</a>
+        <a href="#portfolio">Portfólio</a>
+        <span class="with-popover">
+          <a href="#sobre">Sobre</a>
+          <div class="popover-card">Analista de dados focado em decisões.</div>
+        </span>
+        <span class="with-popover">
+          <a href="#contato" class="contato-link">Contato</a>
+          <div class="popover-card">
+            <div class="actions">
+              <a class="btn" href="https://www.linkedin.com/in/carlos-henrique-0266481a1" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="https://wa.me/5516992833083" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
           </div>
-        </div>
-      </span>
+        </span>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
+  <section class="hero-cover" id="inicio">
+    <div class="hero-inner">
+      <h1>Carlos Júnior</h1>
+      <p>Analista de Dados</p>
+    </div>
+  </section>
+
   <main class="container">
+    <!-- Sobre / Contatos -->
+    <section id="sobre" class="section">
+      <div class="info-grid">
+        <div class="panel">
+          <h3 class="h-underline">Sobre mim</h3>
+          <p>Sou analista de dados focado em transformar dados em decisões. Trabalho com Python (Pandas, SQL, APIs), visualização (Power BI) e automações. Tenho interesse em criar produtos de dados escaláveis e análises orientadas ao negócio.</p>
+        </div>
+        <div class="panel">
+          <h3 class="h-underline">Contatos</h3>
+          <p class="def"><b>Nome:</b> Carlos Henrique de Paula Júnior</p>
+          <p class="def"><b>Cargo:</b> Analista de Dados (Jr)</p>
+          <p class="def"><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/carlos-henrique-0266481a1" target="_blank" rel="noopener">/carlos-henrique-0266481a1</a></p>
+          <p class="def"><b>WhatsApp:</b> <a href="https://wa.me/5516992833083" target="_blank" rel="noopener">(+55) 16 99283-3083</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Currículo -->
+    <section id="curriculo" class="section">
+      <h2 class="cv-title">Currículo</h2>
+      <p class="cv-sub">Experiências e principais resultados gerados na minha carreira.</p>
+      <div class="cv-grid">
+        <!-- Coluna esquerda: objetivo, formação, skills -->
+        <div class="cv-section panel">
+          <h3 class="h-underline">Objetivo</h3>
+          <p>Busco uma oportunidade como Analista de Dados para aplicar análises baseadas em dados, desenvolver automações e apoiar a tomada de decisão estratégica em um ambiente colaborativo, contribuindo para o crescimento e eficiência da empresa</p>
+
+          <h3 class="h-underline" style="margin-top:16px">Formação</h3>
+          <ul>
+            <li><b>Tecnológico</b> — Banco de Dados (previsão de conclusão 08/26.)</li>
+            <li><b>Certificação</b> — Power BI / SQL</li>
+          </ul>
+
+          <h3 class="h-underline" style="margin-top:16px">Linguagens &amp; Ferramentas</h3>
+          <div class="skill-group">
+            <div class="skill"><label><span>Python</span><span>85%</span></label><div class="bar"><span class="w85"></span></div></div>
+            <div class="skill"><label><span>SQL</span><span>89%</span></label><div class="bar"><span class="w89"></span></div></div>
+            <div class="skill"><label><span>Power BI</span><span>80%</span></label><div class="bar"><span class="w80"></span></div></div>
+          </div>
+
+          <h3 class="h-underline" style="margin-top:16px">Machine Learning</h3>
+          <div class="skill-group">
+            <div class="skill"><label><span>Classificação</span><span>65%</span></label><div class="bar"><span class="w65"></span></div></div>
+            <div class="skill"><label><span>Regressão</span><span>65%</span></label><div class="bar"><span class="w65"></span></div></div>
+            <div class="skill"><label><span>Clusterização</span><span>60%</span></label><div class="bar"><span class="w60"></span></div></div>
+            <div class="skill"><label><span>Séries Temporais</span><span>40%</span></label><div class="bar"><span class="w40"></span></div></div>
+          </div>
+        </div>
+
+        <!-- Coluna direita: experiência -->
+        <div class="cv-section panel">
+          <h3 class="h-underline">Experiência</h3>
+
+          <div class="cv-job">
+            <div class="role">Analista de Suporte e Implantação Jr <span class="company">— Delphi Sistemas de Gestão</span></div>
+            <small class="meta">mai/2023 – nov/2023 · Remoto · Arcos/MG</small>
+            <ul class="cv-list">
+              <li>Implantação e suporte de <b>ERP</b> (onboarding, configuração de módulos e integrações).</li>
+              <li><b>Consultas SQL</b> para diagnóstico, auditoria e extração de relatórios.</li>
+              <li><b>Documentação</b> de processos, <b>gestão de incidentes</b> (Kanban) e homologação.</li>
+              <li><b>Treinamento de usuários</b> e resolução de problemas em produção.</li>
+            </ul>
+          </div>
+
+          <div class="cv-sep"></div>
+
+          <div class="cv-job">
+            <div class="role">Auxiliar de Escritório (Assistente Analista de Dados) <span class="company">— Newcomfort Indústria e Comércio de Calçados</span></div>
+            <small class="meta">mar/2022 – abr/2023 · Presencial · Franca/SP</small>
+            <ul class="cv-list">
+              <li><b>Responsável pelo setor de custos</b>: apuração, conciliações e análise de variações.</li>
+              <li><b>Criação de fichas técnicas</b> e padronização de documentações.</li>
+              <li><b>Indicadores</b> e painéis em <b>Excel</b> (Tabelas Dinâmicas, fórmulas, <i>Power Query</i>) e apoio em <b>Power BI</b>.</li>
+              <li><b>Análises exploratórias</b> de produção e vendas para compras e precificação.</li>
+            </ul>
+          </div>
+
+          <div class="cv-sep"></div>
+
+          <div class="cv-job">
+            <div class="role">Gerente de Loja de Varejo <span class="company">— Baby Chic</span></div>
+            <small class="meta">jul/2016 – ago/2019 · Presencial · Patrocínio Paulista/SP</small>
+            <ul class="cv-list">
+              <li><b>Gestão de vendas e estoque</b> com acompanhamento de <b>KPIs</b> (ticket, giro, margem).</li>
+              <li><b>Planejamento de compras</b> e negociação com fornecedores (sazonalidade e histórico).</li>
+              <li><b>Coordenação de equipe</b>, atendimento ao cliente e controles financeiros em planilhas.</li>
+            </ul>
+          </div>
+
+          <h3 class="h-underline" style="margin-top:16px">Destaques para a área de Dados</h3>
+          <ul class="cv-list">
+            <li><b>SQL</b> para troubleshooting e extração em ERP.</li>
+            <li><b>Excel avançado / Power Query</b> e <b>Power BI</b> para KPIs e dashboards.</li>
+            <li><b>Documentação</b> e <b>treinamento</b> de usuários/áreas de negócio.</li>
+            <li>Contexto de <b>varejo</b> (vendas/estoque) e <b>custos industriais</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="hero" id="portfolio">
       <h1>Portfólio de Projetos</h1>
       <p>Demonstração de soluções de problemas de negócio com as ferramentas e técnicas que domino.</p>
@@ -186,14 +319,13 @@
 
       <!-- Cards -->
       <div class="grid" id="grid">
-        <!-- Exemplo 1 -->
         <article class="card" data-cat="analise">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1551281044-8b89ad4a3d53?q=80&w=1200&auto=format&fit=crop');">
+          <div class="thumb" style="background-image:url('https://carloshpjunior.github.io/alessio-zaccaria-MplUOXqEUK0-unsplash.jpg?v=2');">
             <span class="badge">Análise</span>
           </div>
           <div class="content">
             <h3 class="title">Análise de Campanha de Marketing</h3>
-            <p class="desc">Avaliação do desempenho de uma campanha com métricas de conversão, CAC, ROAS e cohort(Ainda em produção).</p>
+            <p class="desc">Avaliação do desempenho de uma campanha com métricas de conversão, CAC, ROAS e cohort (Ainda em produção).</p>
             <div class="actions">
               <a class="btn primary" href="https://github.com/CarloshpJunior/projeto-marketing" target="_blank">Repositório</a>
               <a class="btn" href="https://CarloshpJunior.github.io/projeto-marketing" target="_blank">Demo</a>
@@ -202,14 +334,13 @@
           </div>
         </article>
 
-        <!-- Exemplo 2 -->
         <article class="card" data-cat="automacao">
           <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop');">
             <span class="badge">Automação</span>
           </div>
           <div class="content">
             <h3 class="title">ETL de Vendas com Python</h3>
-            <p class="desc">Pipeline para limpar, transformar e carregar dados de vendas em um data warehouse com agendamento(Ainda em produção).</p>
+            <p class="desc">Pipeline para limpar, transformar e carregar dados de vendas em um data warehouse com agendamento (Ainda em produção).</p>
             <div class="actions">
               <a class="btn primary" href="https://github.com/CarloshpJunior/etl-vendas" target="_blank">Repositório</a>
               <a class="btn" href="#" target="_blank">Post</a>
@@ -217,28 +348,20 @@
           </div>
         </article>
 
-        <!-- Exemplo 3 -->
         <article class="card" data-cat="ia">
           <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1200&auto=format&fit=crop');">
             <span class="badge">IA</span>
           </div>
           <div class="content">
             <h3 class="title">Classificador de Churn</h3>
-            <p class="desc">Modelo supervisionado para prever churn de clientes e priorizar ofertas de retenção(Ainda em produção).</p>
+            <p class="desc">Modelo supervisionado para prever churn de clientes e priorizar ofertas de retenção (Ainda em produção).</p>
             <div class="actions">
               <a class="btn primary" href="https://github.com/CarloshpJunior/churn-model" target="_blank">Repositório</a>
               <a class="btn" href="#" target="_blank">Relatório</a>
             </div>
           </div>
         </article>
-
-        <!-- Duplique <article> para adicionar mais projetos -->
       </div>
-    </section>
-
-    <section id="sobre" class="container">
-      <h2>Sobre</h2>
-      <p class="desc">Sou analista de dados focado em transformar dados em decisões. Trabalho com Python (Pandas, SQL, APIs), visualização (Power BI) e automações. Aqui você encontra meus projetos.</p>
     </section>
 
     <section id="contato" class="container">
@@ -250,91 +373,68 @@
       </div>
     </section>
 
-    <footer>
-     Hospedado no GitHub Pages
-    </footer>
+    <footer>Hospedado no GitHub Pages</footer>
   </main>
 
+  <!-- Scripts -->
   <script>
-(function(){
-  // === Tabs (filtros) ===
-  const tabs = document.querySelectorAll('.tab');
-  const cards = document.querySelectorAll('.card');
-  tabs.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      tabs.forEach(x=>x.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(c=>{ c.style.display = (f==='all' || c.dataset.cat===f) ? 'block' : 'none'; });
+  (function(){
+    // Tabs (filtros)
+    const tabs=document.querySelectorAll('.tab');
+    const cards=document.querySelectorAll('.card');
+    tabs.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        tabs.forEach(x=>x.classList.remove('active'));
+        btn.classList.add('active');
+        const f=btn.dataset.filter;
+        cards.forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'block':'none';});
+      });
     });
-  });
 
-  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+    // Menu mobile
+    const toggle=document.querySelector('.nav-toggle');
+    const panel=document.getElementById('mobileMenu');
+    if(toggle&&panel){
+      const openMenu=()=>{panel.classList.add('open');panel.hidden=false;toggle.setAttribute('aria-expanded','true');};
+      const closeMenu=()=>{panel.classList.remove('open');panel.hidden=true;toggle.setAttribute('aria-expanded','false');};
+      toggle.addEventListener('click',()=> panel.classList.contains('open')?closeMenu():openMenu());
+      panel.addEventListener('click',(e)=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';if(href.startsWith('#'))closeMenu();});
+      document.addEventListener('click',(e)=>{if(panel.classList.contains('open')&&!panel.contains(e.target)&&!toggle.contains(e.target))closeMenu();});
+      window.addEventListener('resize',()=>{if(window.innerWidth>=769)closeMenu();});
+    }
+  })();
+  </script>
 
-  // === Popovers (exclusivos) ===
-  const closeAll = ()=>{
-    document.querySelectorAll('.with-popover.open, .has-popover.open').forEach(el=>el.classList.remove('open'));
-  };
+  <!-- Skills: animação de loading -->
+  <script>
+  (function(){
+    const bars=document.querySelectorAll('.skill .bar span');
+    if(!bars.length) return;
 
-  // Mostrar/ocultar popover ao passar o mouse (desktop) e focar
-  document.querySelectorAll('.with-popover, .has-popover').forEach(w=>{
-    w.addEventListener('mouseenter', ()=>{ if(!isMobile()){ closeAll(); w.classList.add('open'); }});
-    w.addEventListener('mouseleave', ()=>{ if(!isMobile()){ w.classList.remove('open'); }});
-    const link = w.querySelector('a') || w; // para .has-popover no Sobre (que é o próprio link)
-    if(link){ link.addEventListener('focus', ()=>{ if(!isMobile()){ closeAll(); w.classList.add('open'); }}); }
-  });
-
-  // === Sobre (popover só no desktop; no mobile apenas navega) ===
-  const sobreLinks = Array.from(document.querySelectorAll('a.has-popover[href="#sobre"], .sobre-wrap a[href="#sobre"]'));
-  const sobreSection = document.querySelector('#sobre');
-  sobreLinks.forEach(link=>{
-    link.addEventListener('click',(e)=>{
-      if(!isMobile()){ // desktop: abre popover e rola
-        e.preventDefault();
-        closeAll();
-        (link.classList.contains('has-popover') ? link : link.parentElement).classList.add('open');
-        if(sobreSection) sobreSection.scrollIntoView({behavior:'smooth'});
-      } else {
-        // mobile: apenas fecha menu e navega
-        const panel = document.getElementById('mobileMenu');
-        if(panel){ panel.classList.remove('open'); panel.hidden = true; }
-        // usa hash para garantir navegação mesmo com menus
-        location.hash = '#sobre';
+    function getPct(el){
+      for(const cls of el.classList){
+        if(cls && cls[0]==='w'){ const n=parseInt(cls.slice(1),10); if(!isNaN(n)) return Math.min(100,n); }
       }
-    });
-  });
-
-  // === Contato (popover com botões) ===
-  const contatoWraps = Array.from(document.querySelectorAll('.contato-wrap, #mobileMenu .with-popover'));
-  contatoWraps.forEach(wrap=>{
-    const link = wrap.querySelector('.contato-link');
-    if(!link) return;
-    // desktop: abrir no hover já está acima; clique mantém aberto
-    link.addEventListener('click',(e)=>{
-      if(isMobile()){
-        e.preventDefault(); // no mobile abre/fecha o cartão em vez de navegar
-        wrap.classList.toggle('open');
+      const label=el.closest('.skill')?.querySelector('label span:last-child');
+      if(label){
+        const digits=(label.textContent||'').replace(/[^0-9]/g,'');
+        const p=parseInt(digits,10); if(!isNaN(p)) return Math.min(100,p);
       }
-    });
-  });
+      return 100;
+    }
+    function arm(el){ el.style.setProperty('--target', getPct(el)+'%'); }
 
-  // === Menu mobile (hambúrguer) ===
-  const toggle = document.querySelector('.nav-toggle');
-  const panel = document.getElementById('mobileMenu');
-  if(toggle && panel){
-    const openMenu = ()=>{ panel.classList.add('open'); panel.hidden=false; toggle.setAttribute('aria-expanded','true'); };
-    const closeMenu = ()=>{ panel.classList.remove('open'); panel.hidden=true; toggle.setAttribute('aria-expanded','false'); closeAll(); };
-    toggle.addEventListener('click', ()=> panel.classList.contains('open') ? closeMenu() : openMenu());
-    panel.addEventListener('click', (e)=>{
-      // Se clicar em um link de âncora (#...), fecha o menu e deixa navegar
-      if(e.target.closest('a') && e.target.closest('a').getAttribute('href')?.startsWith('#')){
-        closeMenu();
-      }
-    });
-    window.addEventListener('resize', ()=>{ if(!isMobile()) closeMenu(); });
-    document.addEventListener('click', (e)=>{ if(panel.classList.contains('open') && !panel.contains(e.target) && !toggle.contains(e.target)) closeMenu(); });
-  }
-})();
-</script>
+    if('IntersectionObserver' in window){
+      const io=new IntersectionObserver((entries,obs)=>{
+        entries.forEach(ent=>{
+          if(ent.isIntersecting){ const el=ent.target; arm(el); el.classList.add('animate'); obs.unobserve(el); }
+        });
+      },{threshold:0.4});
+      bars.forEach(b=>io.observe(b));
+    }else{
+      bars.forEach(b=>{arm(b); b.classList.add('animate');});
+    }
+  })();
+  </script>
 </body>
 </html>
