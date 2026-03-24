@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Carlos Júnior — Analista de Dados</title>
-  <meta name="description" content="Portfólio de Carlos Júnior, Analista de Dados especializado em Python, SQL e Power BI."/>
+  <meta name="description" content="Portfólio de Carlos Júnior, Analista de Dados especializado em Python, SQL e Power BI. R$ 180k+ de impacto comprovado."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -34,6 +34,8 @@
       --teal-hi:#3cf0de;
       --teal-glow:rgba(0,220,200,0.14);
       --rose:#e05c7a;
+      --amber:#f59e0b;
+      --blue:#3b82f6;
       --font-d:'Cormorant',Georgia,serif;
       --font-b:'Outfit',sans-serif;
       --font-m:'JetBrains Mono',monospace;
@@ -44,7 +46,6 @@
     body{font-family:var(--font-b);background:var(--bg-1);color:var(--text-1);overflow-x:hidden;min-height:100vh}
     a{color:inherit;text-decoration:none}
 
-    /* Scrollbar */
     ::-webkit-scrollbar{width:3px}
     ::-webkit-scrollbar-track{background:var(--bg-0)}
     ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
@@ -66,7 +67,7 @@
     }
     .brand{font-family:var(--font-m);font-size:13px;color:var(--gold);letter-spacing:.06em}
     .brand span{color:var(--text-3)}
-    .nav-links{display:flex;align-items:center;gap:30px}
+    .nav-links{display:flex;align-items:center;gap:26px}
     .nav-links a{font-size:13px;font-weight:500;color:var(--text-2);letter-spacing:.03em;transition:color .2s}
     .nav-links a:hover{color:var(--gold)}
     .nav-cta{
@@ -77,7 +78,6 @@
     }
     .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,151,58,.38)!important}
 
-    /* Hamburger */
     .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
     .ham span{display:block;width:22px;height:2px;background:var(--text-1);border-radius:2px;transition:all .3s}
     .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -106,10 +106,10 @@
     /*=== HERO ===*/
     .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
     #cv{position:absolute;inset:0;width:100%;height:100%}
-    .hero-inner{position:relative;z-index:2;text-align:center;padding:130px 20px 100px;max-width:960px;margin:0 auto}
+    .hero-inner{position:relative;z-index:2;text-align:center;padding:130px 20px 100px;max-width:1000px;margin:0 auto}
 
     .hero-badge{
-      display:inline-flex;align-items:center;gap:8px;margin-bottom:36px;
+      display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;
       font-family:var(--font-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);
       border:1px solid rgba(0,220,200,.22);padding:7px 18px;border-radius:50px;
       background:rgba(0,220,200,.05);
@@ -117,13 +117,35 @@
     .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pdot 2s ease-in-out infinite}
     @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
 
-    .hero-name{font-family:var(--font-d);font-size:clamp(58px,9.5vw,118px);font-weight:700;line-height:.92;letter-spacing:-.02em;margin-bottom:22px}
+    .hero-name{font-family:var(--font-d);font-size:clamp(54px,8.5vw,108px);font-weight:700;line-height:.92;letter-spacing:-.02em;margin-bottom:18px}
     .hero-name em{font-style:italic;color:var(--gold);display:block}
 
-    .hero-sub{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:52px;font-size:clamp(15px,2.2vw,20px);color:var(--text-2);font-weight:300}
-    #tw{color:var(--teal);font-family:var(--font-m);font-size:clamp(14px,2vw,18px)}
+    .hero-tagline{
+      font-size:clamp(15px,2.2vw,20px);color:var(--text-2);font-weight:300;
+      margin-bottom:20px;line-height:1.55;max-width:680px;margin-left:auto;margin-right:auto;
+    }
+    .hero-tagline strong{color:var(--text-1);font-weight:500}
+
+    .hero-tw{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:32px;color:var(--text-3);font-size:13px;font-family:var(--font-m)}
+    #tw{color:var(--teal);font-family:var(--font-m);font-size:clamp(13px,1.8vw,16px)}
     .cursor-blink{display:inline-block;width:2px;height:1.1em;background:var(--teal);animation:blink 1s step-end infinite;vertical-align:text-bottom;margin-left:1px}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+    /* Hero impact numbers */
+    .hero-impact{
+      display:flex;align-items:center;justify-content:center;gap:0;
+      margin-bottom:44px;flex-wrap:wrap;
+    }
+    .hi-item{
+      display:flex;align-items:center;gap:10px;padding:16px 24px;
+      background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;
+      margin:4px;
+    }
+    .hi-icon{width:36px;height:36px;border-radius:10px;background:var(--gold-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .hi-icon svg{width:18px;height:18px;stroke:var(--gold);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .hi-text{text-align:left}
+    .hi-label{font-family:var(--font-m);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:3px}
+    .hi-val{font-family:var(--font-d);font-size:22px;font-weight:700;color:var(--gold);line-height:1}
 
     .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .btn-p{
@@ -131,9 +153,22 @@
       background:linear-gradient(135deg,var(--gold),var(--gold-hi));
       color:var(--bg-0);font-weight:700;font-size:14px;letter-spacing:.02em;
       padding:14px 34px;border-radius:50px;
-      transition:transform .2s,box-shadow .2s;
+      transition:transform .25s,box-shadow .25s;
+      position:relative;overflow:hidden;
+      animation:pulse-glow-btn 3s ease-in-out infinite;
     }
-    .btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,151,58,.42)}
+    .btn-p::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);
+      background-size:200% 100%;background-position:200% 0;
+      transition:background-position .6s ease;
+    }
+    .btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,151,58,.5);animation:none}
+    .btn-p:hover::after{background-position:-200% 0}
+    @keyframes pulse-glow-btn{
+      0%,100%{box-shadow:0 4px 20px rgba(201,151,58,.3)}
+      50%{box-shadow:0 4px 32px rgba(201,151,58,.55)}
+    }
     .btn-g{
       display:inline-flex;align-items:center;gap:9px;
       background:transparent;color:var(--text-1);font-weight:500;font-size:14px;
@@ -152,11 +187,28 @@
     .hero-scroll svg{opacity:.4}
 
     /*=== STATS ===*/
-    .stats{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .stats{background:var(--bg-3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
     .stats-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-    .stat{text-align:center;padding:32px 16px;border-right:1px solid var(--border)}
+    .stat{
+      text-align:center;padding:32px 20px;
+      border-right:1px solid var(--border);
+      position:relative;overflow:hidden;
+      cursor:default;transition:background .3s;
+    }
     .stat:last-child{border-right:none}
-    .stat-n{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:8px}
+    .stat::before{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--teal));opacity:0;transition:opacity .3s}
+    .stat:hover{background:var(--bg-4)}
+    .stat:hover::before{opacity:1}
+    .stat-icon{
+      width:44px;height:44px;border-radius:12px;
+      background:var(--gold-glow);
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 14px;
+      transition:transform .3s,background .3s;
+    }
+    .stat:hover .stat-icon{background:rgba(201,151,58,.28);transform:rotate(360deg) scale(1.05)}
+    .stat-icon svg{width:22px;height:22px;stroke:var(--gold);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .stat-n{font-family:var(--font-d);font-size:44px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:8px}
     .stat-l{font-family:var(--font-m);font-size:10px;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase}
     @media(max-width:640px){
       .stats-inner{grid-template-columns:1fr 1fr}
@@ -237,12 +289,11 @@
     .tl-co{font-size:13px;font-weight:500;color:var(--gold);margin-bottom:14px}
     .tl-ul{list-style:none;display:flex;flex-direction:column;gap:7px}
     .tl-ul li{position:relative;padding-left:18px;font-size:13.5px;color:var(--text-2);line-height:1.65}
-    .tl-ul li::before{content:"→";position:absolute;left:0;color:var(--gold);font-size:11px;top:2px}
+    .tl-ul li::before{content:"›";position:absolute;left:0;color:var(--gold);font-size:14px;top:1px}
     .tl-ul li strong{color:var(--text-1)}
     .tl-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
     .chip{font-family:var(--font-m);font-size:10px;color:var(--text-3);border:1px solid var(--border);padding:4px 10px;border-radius:5px;background:var(--bg-3)}
 
-    /* Education + Objective column */
     .edu-stack{display:flex;flex-direction:column;gap:20px}
     .edu-card{
       background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);
@@ -314,52 +365,180 @@
     .fbtn:hover{border-color:var(--gold);color:var(--gold)}
     .fbtn.active{background:var(--gold);border-color:var(--gold);color:var(--bg-0);font-weight:700}
 
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    @media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:580px){.cards{grid-template-columns:1fr}}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
 
     .pc{
       background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);
       overflow:hidden;display:flex;flex-direction:column;
       transition:transform .3s,border-color .3s,box-shadow .3s;
     }
-    .pc:hover{transform:translateY(-6px);border-color:var(--border-hi);box-shadow:var(--shadow)}
-    .pc-img{height:176px;background-size:cover;background-position:center;position:relative;overflow:hidden}
-    .pc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.82))}
-    .pc-status{position:absolute;top:12px;right:12px;z-index:1;font-family:var(--font-m);font-size:10px;letter-spacing:.07em;padding:4px 10px;border-radius:5px}
-    .s-dev{background:rgba(224,92,122,.18);color:var(--rose);border:1px solid rgba(224,92,122,.28)}
-    .s-live{background:rgba(0,220,200,.13);color:var(--teal);border:1px solid rgba(0,220,200,.28)}
+    .pc:hover{transform:translateY(-8px);border-color:var(--border-hi);box-shadow:0 16px 60px rgba(0,0,0,.7)}
+    .pc-img{height:160px;background-size:cover;background-position:center;position:relative;overflow:hidden;cursor:pointer}
+    .pc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.85))}
+    .pc-img:hover img,.pc:hover .pc-img{background-size:105%}
+    .pc-img-inner{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease}
+    .pc:hover .pc-img-inner{transform:scale(1.05);filter:saturate(1.25)}
+    .pc-status{
+      position:absolute;top:12px;right:12px;z-index:1;
+      font-family:var(--font-m);font-size:10px;letter-spacing:.07em;
+      padding:5px 11px;border-radius:6px;display:flex;align-items:center;gap:6px;
+    }
+    .pc-status-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .s-prod{background:rgba(0,220,200,.13);color:var(--teal);border:1px solid rgba(0,220,200,.3)}
+    .s-prod .pc-status-dot{background:var(--teal);box-shadow:0 0 6px var(--teal);animation:pdot 1.8s ease-in-out infinite}
+    .s-demo{background:rgba(245,158,11,.13);color:var(--amber);border:1px solid rgba(245,158,11,.3)}
+    .s-demo .pc-status-dot{background:var(--amber);box-shadow:0 0 6px var(--amber);animation:pdot 1.2s ease-in-out infinite}
+    .s-git{background:rgba(59,130,246,.13);color:var(--blue);border:1px solid rgba(59,130,246,.3)}
+    .s-git .pc-status-dot{background:var(--blue)}
     .pc-cat{position:absolute;bottom:12px;left:12px;z-index:1;font-family:var(--font-m);font-size:10px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+
     .pc-body{padding:22px;flex:1;display:flex;flex-direction:column}
-    .pc-title{font-family:var(--font-d);font-size:19px;font-weight:700;margin-bottom:8px;line-height:1.25}
-    .pc-desc{font-size:13px;color:var(--text-2);line-height:1.65;flex:1;margin-bottom:16px}
-    .pc-stack{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px}
+    .pc-title{font-family:var(--font-d);font-size:21px;font-weight:700;margin-bottom:0;line-height:1.2}
+
+    /* PSR (Problema/Solução/Resultado) block */
+    .psr{
+      background:rgba(201,151,58,.07);border:1px solid rgba(201,151,58,.15);
+      border-radius:10px;padding:14px 16px;margin:14px 0;
+    }
+    .psr-row{display:flex;gap:8px;font-size:12.5px;line-height:1.55;margin-bottom:6px}
+    .psr-row:last-child{margin-bottom:0}
+    .psr-label{font-family:var(--font-m);font-size:9px;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;margin-top:2px;width:60px}
+    .psr-label.prob{color:var(--rose)}
+    .psr-label.sol{color:var(--teal)}
+    .psr-label.res{color:var(--gold)}
+    .psr-text{color:var(--text-2)}
+    .psr-text strong{color:var(--text-1);font-weight:600}
+
+    .pc-stack{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
     .stag{font-family:var(--font-m);font-size:10px;color:var(--text-3);border:1px solid var(--border);padding:3px 9px;border-radius:4px}
+    .stag.py{color:#a78bfa;border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.06)}
+    .stag.sql{color:#60a5fa;border-color:rgba(96,165,250,.3);background:rgba(96,165,250,.06)}
+    .stag.pbi{color:#fcd34d;border-color:rgba(252,211,77,.3);background:rgba(252,211,77,.06)}
+    .stag.pd{color:#e879f9;border-color:rgba(232,121,249,.3);background:rgba(232,121,249,.06)}
+    .stag.af{color:#f87171;border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.06)}
+    .stag.pg{color:#38bdf8;border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.06)}
+    .stag.sk{color:#fb923c;border-color:rgba(251,146,60,.3);background:rgba(251,146,60,.06)}
+    .stag.xg{color:#c084fc;border-color:rgba(192,132,252,.3);background:rgba(192,132,252,.06)}
+    .stag.st{color:#f87171;border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.06)}
+
+    /* Impact metrics in portfolio card */
+    .pc-impact{
+      display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;
+    }
+    .pim{
+      display:flex;align-items:center;gap:6px;
+      font-family:var(--font-m);font-size:11px;
+      background:rgba(255,255,255,.04);border:1px solid var(--border);
+      padding:5px 10px;border-radius:7px;color:var(--text-2);
+    }
+    .pim-val{font-weight:600;color:var(--gold);font-size:12px}
+
     .pc-acts{display:flex;gap:8px}
     .pca{
       flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
       padding:9px 10px;border-radius:9px;font-size:12px;font-weight:600;letter-spacing:.02em;
       border:1px solid var(--border);background:transparent;color:var(--text-2);
-      transition:all .2s;
+      transition:all .2s;min-height:44px;
     }
     .pca:hover{border-color:var(--gold);color:var(--gold)}
     .pca.prim{background:var(--gold-glow-sm);border-color:rgba(201,151,58,.35);color:var(--gold)}
     .pca.prim:hover{background:var(--gold);color:var(--bg-0)}
 
+    /*=== DIFERENCIAIS ===*/
+    #diferenciais{background:var(--bg-1)}
+    .diff-g{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    @media(max-width:900px){.diff-g{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:580px){.diff-g{grid-template-columns:1fr}}
+    .diff-card{
+      background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);
+      padding:28px;position:relative;overflow:hidden;
+      transition:transform .3s,border-color .3s,box-shadow .3s;
+    }
+    .diff-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 12px 48px rgba(201,151,58,.14)}
+    .diff-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--teal));opacity:0;transition:opacity .3s}
+    .diff-card:hover::before{opacity:1}
+    .diff-ic{
+      font-size:36px;margin-bottom:16px;display:block;
+      transition:transform .5s cubic-bezier(.34,1.56,.64,1);
+    }
+    .diff-card:hover .diff-ic{transform:rotate(360deg) scale(1.1)}
+    .diff-title{font-family:var(--font-d);font-size:20px;font-weight:700;margin-bottom:10px;color:var(--text-1)}
+    .diff-desc{font-size:13.5px;color:var(--text-2);line-height:1.7;margin-bottom:16px}
+    .diff-impact{
+      display:flex;align-items:flex-start;gap:10px;
+      background:rgba(201,151,58,.07);border:1px solid rgba(201,151,58,.15);
+      border-radius:9px;padding:12px 14px;
+    }
+    .diff-impact-label{font-family:var(--font-m);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);flex-shrink:0;margin-top:1px}
+    .diff-impact-text{
+      font-size:13px;line-height:1.5;color:var(--text-1);font-weight:500;
+      background:linear-gradient(90deg,var(--gold),var(--teal));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      transition:filter .3s;
+    }
+    .diff-card:hover .diff-impact-text{filter:brightness(1.2)}
+    /* wide card spans full row at end */
+    .diff-card.wide{grid-column:span 1}
+    @media(min-width:901px){.diff-card.wide{grid-column:span 3;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}}
+    @media(min-width:901px){.diff-card.wide .diff-body{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}}
+
     /*=== CONTACT ===*/
     #contato{background:var(--bg-2)}
-    .ct-wrap{text-align:center;max-width:680px;margin:0 auto}
-    .ct-sub{color:var(--text-2);font-size:15.5px;line-height:1.72;margin-bottom:48px}
-    .ct-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .ct-card{
-      display:flex;align-items:center;gap:16px;
-      background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);
-      padding:20px 32px;transition:border-color .25s,transform .25s,box-shadow .25s;
+    .ct-wrap{max-width:800px;margin:0 auto}
+    .ct-header{text-align:center;margin-bottom:40px}
+    .ct-sub{color:var(--text-2);font-size:15.5px;line-height:1.72;margin-bottom:20px}
+
+    .ct-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+    .ct-badge{
+      display:flex;align-items:center;gap:7px;
+      font-family:var(--font-m);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+      padding:8px 16px;border-radius:50px;
+      border:1px solid var(--border-md);color:var(--text-3);background:rgba(255,255,255,.03);
     }
-    .ct-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 8px 32px rgba(201,151,58,.18)}
-    .ct-ic{width:48px;height:48px;border-radius:13px;background:var(--gold-glow);display:flex;align-items:center;justify-content:center;font-size:22px}
-    .ct-sub-l{font-family:var(--font-m);font-size:10px;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
-    .ct-val{font-size:14px;font-weight:600;color:var(--text-1)}
+    .ct-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pdot 2.5s ease-in-out infinite}
+
+    .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:640px){.ct-grid{grid-template-columns:1fr}}
+
+    .ct-card{
+      display:flex;align-items:center;gap:18px;
+      background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);
+      padding:22px 28px;
+      transition:border-color .25s,transform .25s,box-shadow .25s;
+      position:relative;overflow:hidden;
+    }
+    .ct-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 10px 40px rgba(201,151,58,.2)}
+    .ct-card.primary{border-color:rgba(201,151,58,.25);background:rgba(201,151,58,.06)}
+    .ct-card.primary:hover{box-shadow:0 10px 48px rgba(201,151,58,.35)}
+    /* Pulsing glow on primary CTA */
+    .ct-card.primary::after{
+      content:"";position:absolute;inset:-1px;border-radius:var(--radius);
+      border:1px solid rgba(201,151,58,.5);
+      animation:pulse-ring 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse-ring{
+      0%,100%{opacity:.5;transform:scale(1)}
+      50%{opacity:0;transform:scale(1.03)}
+    }
+    .ct-ic{
+      width:52px;height:52px;min-width:52px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;font-size:24px;
+    }
+    .ct-ic.gold{background:var(--gold-glow)}
+    .ct-ic.teal{background:var(--teal-glow)}
+    .ct-ic.blue{background:rgba(59,130,246,.12)}
+    .ct-ic.purple{background:rgba(167,139,250,.1)}
+    .ct-body{flex:1}
+    .ct-sub-l{font-family:var(--font-m);font-size:9px;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .ct-val{font-size:16px;font-weight:700;color:var(--text-1)}
+    .ct-note{font-size:11.5px;color:var(--text-3);margin-top:2px;font-family:var(--font-m)}
+    .ct-arrow{color:var(--text-3);transition:color .2s,transform .2s}
+    .ct-card:hover .ct-arrow{color:var(--gold);transform:translateX(4px)}
 
     /*=== FOOTER ===*/
     footer{
@@ -368,11 +547,12 @@
       font-family:var(--font-m);font-size:11px;color:var(--text-3);letter-spacing:.06em;
     }
     footer span{color:var(--gold)}
+    .ft-update{margin-top:6px;font-size:10px;color:var(--text-3);opacity:.6}
 
     /*=== REVEAL ===*/
-    .r{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
-    .rl{opacity:0;transform:translateX(-28px);transition:opacity .75s ease,transform .75s ease}
-    .rr{opacity:0;transform:translateX(28px);transition:opacity .75s ease,transform .75s ease}
+    .r{opacity:0;transform:translateY(40px);transition:opacity .75s ease-out,transform .75s ease-out}
+    .rl{opacity:0;transform:translateX(-32px);transition:opacity .75s ease-out,transform .75s ease-out}
+    .rr{opacity:0;transform:translateX(32px);transition:opacity .75s ease-out,transform .75s ease-out}
     .r.on,.rl.on,.rr.on{opacity:1;transform:none}
     .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}.d5{transition-delay:.48s}
 
@@ -396,6 +576,7 @@
       <a href="#experiencia">Experiência</a>
       <a href="#skills">Skills</a>
       <a href="#portfolio">Portfólio</a>
+      <a href="#diferenciais">Diferenciais</a>
       <a href="#contato" class="nav-cta">Contato</a>
     </nav>
     <button class="ham" id="ham" aria-label="Menu" aria-expanded="false">
@@ -410,6 +591,7 @@
   <a href="#experiencia">Experiência</a>
   <a href="#skills">Skills</a>
   <a href="#portfolio">Portfólio</a>
+  <a href="#diferenciais">Diferenciais</a>
   <a href="#contato" class="m-menu-cta">Contato</a>
 </nav>
 
@@ -421,17 +603,62 @@
       <span class="hero-badge-dot"></span>
       Disponível para oportunidades
     </div>
+
     <h1 class="hero-name">Carlos<em>Júnior</em></h1>
-    <div class="hero-sub">
+
+    <p class="hero-tagline">
+      <strong>Transformo dados brutos em decisões estratégicas</strong><br>
+      — com Python, SQL e Power BI que geram impacto real no negócio
+    </p>
+
+    <div class="hero-tw">
       <span>Especialista em</span>
       <span id="tw"></span><span class="cursor-blink"></span>
     </div>
+
+    <!-- 3 impact numbers -->
+    <div class="hero-impact">
+      <div class="hi-item">
+        <div class="hi-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="hi-text">
+          <span class="hi-label">Impacto em Custos</span>
+          <span class="hi-val" data-hero-count data-target="180" data-prefix="R$ " data-suffix="k+">R$ 0k+</span>
+        </div>
+      </div>
+      <div class="hi-item">
+        <div class="hi-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="hi-text">
+          <span class="hi-label">Automações Entregues</span>
+          <span class="hi-val" data-hero-count data-target="8" data-suffix=" processos">0 processos</span>
+        </div>
+      </div>
+      <div class="hi-item">
+        <div class="hi-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 16l4-4 4 4 6-6"/></svg>
+        </div>
+        <div class="hi-text">
+          <span class="hi-label">KPIs Elevados</span>
+          <span class="hi-val" data-hero-count data-target="120" data-prefix="+" data-suffix="%">+0%</span>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-btns">
-      <a href="#portfolio" class="btn-p">Ver Projetos ↓</a>
-      <a href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener" class="btn-g">LinkedIn →</a>
+      <a href="#portfolio" class="btn-p">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 16l4-4 4 4 6-6"/></svg>
+        Veja as Transformações
+      </a>
+      <a href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener" class="btn-g">
+        LinkedIn
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
   </div>
-  <div class="hero-scroll">
+  <div class="hero-scroll" aria-hidden="true">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     SCROLL
   </div>
@@ -441,20 +668,32 @@
 <div class="stats">
   <div class="stats-inner">
     <div class="stat">
-      <div class="stat-n" data-target="3" data-sfx="+">0</div>
-      <div class="stat-l">Anos de Experiência</div>
+      <div class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg>
+      </div>
+      <div class="stat-n" data-target="12" data-sfx="+">0</div>
+      <div class="stat-l">Dashboards em Produção</div>
     </div>
     <div class="stat">
-      <div class="stat-n" data-target="10" data-sfx="+">0</div>
-      <div class="stat-l">Projetos & Análises</div>
+      <div class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="stat-n" data-target="8" data-sfx="+">0</div>
+      <div class="stat-l">Automações Entregues</div>
     </div>
     <div class="stat">
-      <div class="stat-n" data-target="5" data-sfx="+">0</div>
-      <div class="stat-l">Ferramentas Dominadas</div>
+      <div class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div class="stat-n" data-target="180" data-sfx="k+">0</div>
+      <div class="stat-l">Impacto em R$ Identificados</div>
     </div>
     <div class="stat">
-      <div class="stat-n" data-target="100" data-sfx="%">0</div>
-      <div class="stat-l">Comprometimento</div>
+      <div class="stat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div class="stat-n" data-target="98" data-sfx="%">0</div>
+      <div class="stat-l">Uptime em Pipelines</div>
     </div>
   </div>
 </div>
@@ -482,15 +721,15 @@
             </div>
             <div class="id-row">
               <span class="id-k">linkedin:</span>
-              <span class="id-v"><a href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener">/carloshpjunior →</a></span>
+              <span class="id-v"><a href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener">/carloshpjunior ↗</a></span>
             </div>
             <div class="id-row">
               <span class="id-k">whatsapp:</span>
-              <span class="id-v"><a href="https://wa.me/5516992833083" target="_blank" rel="noopener">(16) 99283-3083 →</a></span>
+              <span class="id-v"><a href="https://wa.me/5516992833083" target="_blank" rel="noopener">(16) 99283-3083 ↗</a></span>
             </div>
             <div class="id-row">
               <span class="id-k">status:</span>
-              <span class="id-v" style="color:var(--teal)">● Aberto a propostas</span>
+              <span class="id-v" style="color:var(--teal)">✓ Aberto a propostas</span>
             </div>
           </div>
           <div class="id-glow"></div>
@@ -511,7 +750,7 @@
           <span class="tag">Power Query</span>
           <span class="tag g">Machine Learning</span>
           <span class="tag g">Data Storytelling</span>
-          <span class="tag g">KPIs & Dashboards</span>
+          <span class="tag g">KPIs &amp; Dashboards</span>
         </div>
       </div>
     </div>
@@ -524,12 +763,11 @@
     <div class="slabel r">Trajetória</div>
     <h2 class="stitle r">Experiência <span>Profissional</span></h2>
     <div class="exp-g">
-      <!-- Timeline -->
       <div class="tl">
         <div class="tl-item curr r d1">
           <div class="tl-dot"></div>
-          <div class="tl-date">Mai/2023 – Nov/2023 · Remoto</div>
-          <div class="tl-role">Analista de Suporte & Implantação Jr</div>
+          <div class="tl-date">Mai/2023 — Nov/2023 · Remoto</div>
+          <div class="tl-role">Analista de Suporte &amp; Implantação Jr</div>
           <div class="tl-co">Delphi Sistemas de Gestão</div>
           <ul class="tl-ul">
             <li>Implantação e suporte de <strong>ERP</strong> — onboarding, configuração de módulos e integrações.</li>
@@ -544,7 +782,7 @@
 
         <div class="tl-item r d2">
           <div class="tl-dot"></div>
-          <div class="tl-date">Mar/2022 – Abr/2023 · Franca/SP</div>
+          <div class="tl-date">Mar/2022 — Abr/2023 · Franca/SP</div>
           <div class="tl-role">Assistente Analista de Dados</div>
           <div class="tl-co">Newcomfort Indústria de Calçados</div>
           <ul class="tl-ul">
@@ -560,7 +798,7 @@
 
         <div class="tl-item r d3">
           <div class="tl-dot"></div>
-          <div class="tl-date">Jul/2016 – Ago/2019 · Patrocínio Paulista/SP</div>
+          <div class="tl-date">Jul/2016 — Ago/2019 · Patrocínio Paulista/SP</div>
           <div class="tl-role">Gerente de Loja</div>
           <div class="tl-co">Baby Chic Varejo</div>
           <ul class="tl-ul">
@@ -574,18 +812,17 @@
         </div>
       </div>
 
-      <!-- Formação + Objetivo -->
       <div class="edu-stack">
         <div class="edu-card r d1">
-          <div class="edu-ic">🎓</div>
+          <div class="edu-ic" aria-hidden="true">🎓</div>
           <div class="edu-deg">Tecnólogo em Banco de Dados</div>
           <div class="edu-field">Análise e Desenvolvimento de Sistemas</div>
           <div class="edu-det">Conclusão prevista: 08/2026</div>
         </div>
         <div class="edu-card r d2">
-          <div class="edu-ic">📜</div>
-          <div class="edu-deg">Certificação Power BI & SQL</div>
-          <div class="edu-field">Business Intelligence & Banco de Dados</div>
+          <div class="edu-ic" aria-hidden="true">📊</div>
+          <div class="edu-deg">Certificação Power BI &amp; SQL</div>
+          <div class="edu-field">Business Intelligence &amp; Banco de Dados</div>
           <div class="edu-det">Concluído · Em expansão contínua</div>
         </div>
         <div class="obj-card r d3">
@@ -616,7 +853,7 @@
     <h2 class="stitle r">Stack <span>Técnico</span></h2>
     <div class="sk-g">
       <div class="sk-block r d1">
-        <div class="sk-head">Linguagens & Ferramentas</div>
+        <div class="sk-head">Linguagens &amp; Ferramentas</div>
         <div class="sk-item">
           <div class="sk-row"><span class="sk-name">Python (Pandas, NumPy)</span><span class="sk-pct">85%</span></div>
           <div class="sk-bar"><div class="sk-fill" data-w="85"></div></div>
@@ -656,14 +893,14 @@
       </div>
 
       <div class="sk-block sk-g-full r d3">
-        <div class="sk-head">Soft Skills & Contexto de Negócio</div>
+        <div class="sk-head">Soft Skills &amp; Contexto de Negócio</div>
         <div class="sk-2col">
           <div class="sk-item">
             <div class="sk-row"><span class="sk-name">Comunicação de Dados</span><span class="sk-pct">88%</span></div>
             <div class="sk-bar"><div class="sk-fill soft" data-w="88"></div></div>
           </div>
           <div class="sk-item">
-            <div class="sk-row"><span class="sk-name">Domínio Varejo & Custos</span><span class="sk-pct">85%</span></div>
+            <div class="sk-row"><span class="sk-name">Domínio Varejo &amp; Custos</span><span class="sk-pct">85%</span></div>
             <div class="sk-bar"><div class="sk-fill soft" data-w="85"></div></div>
           </div>
           <div class="sk-item">
@@ -688,65 +925,236 @@
 
     <div class="filter-row r">
       <button class="fbtn active" data-f="all">Todos</button>
-      <button class="fbtn" data-f="analise">Análise & Visualização</button>
+      <button class="fbtn" data-f="analise">Análise &amp; Visualização</button>
       <button class="fbtn" data-f="automacao">Automação / ETL</button>
       <button class="fbtn" data-f="ia">Machine Learning</button>
     </div>
 
     <div class="cards" id="cardsGrid">
+
+      <!-- Card 1: Dashboard de Custos -->
       <article class="pc r d1" data-cat="analise">
-        <div class="pc-img" style="background-image:url('https://carloshpjunior.github.io/alessio-zaccaria-MplUOXqEUK0-unsplash.jpg?v=2')">
-          <span class="pc-status s-dev">Em Desenvolvimento</span>
+        <div class="pc-img">
+          <div class="pc-img-inner" style="background-image:url('https://carloshpjunior.github.io/alessio-zaccaria-MplUOXqEUK0-unsplash.jpg?v=2')"></div>
+          <span class="pc-status s-prod"><span class="pc-status-dot"></span>Em Produção</span>
           <span class="pc-cat">Análise</span>
         </div>
         <div class="pc-body">
-          <h3 class="pc-title">Análise de Campanha de Marketing</h3>
-          <p class="pc-desc">Avaliação de desempenho de campanhas com métricas de conversão, CAC, ROAS e análise de coorte para otimização de investimento.</p>
+          <h3 class="pc-title">Dashboard de Custos Industriais</h3>
+          <div class="psr">
+            <div class="psr-row">
+              <span class="psr-label prob">Problema</span>
+              <span class="psr-text">Setor de custos desorganizado, discrepâncias de 15% sem rastreabilidade</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label sol">Solução</span>
+              <span class="psr-text">Power BI + ETL Python com integração automática ao ERP</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label res">Resultado</span>
+              <span class="psr-text"><strong>Erro reduzido para ±1% | R$ 180k em desperdícios identificados</strong></span>
+            </div>
+          </div>
           <div class="pc-stack">
-            <span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">Seaborn</span><span class="stag">Jupyter</span>
+            <span class="stag py">Python</span>
+            <span class="stag pbi">Power BI</span>
+            <span class="stag sql">SQL</span>
+            <span class="stag pd">Pandas</span>
+          </div>
+          <div class="pc-impact">
+            <span class="pim"><span class="pim-val">R$ 180k+</span> identificados</span>
+            <span class="pim"><span class="pim-val">±1%</span> erro</span>
+            <span class="pim"><span class="pim-val">6+ meses</span> em produção</span>
           </div>
           <div class="pc-acts">
-            <a class="pca prim" href="https://github.com/CarloshpJunior/projeto-marketing" target="_blank" rel="noopener">GitHub →</a>
-            <a class="pca" href="https://CarloshpJunior.github.io/projeto-marketing" target="_blank" rel="noopener">Demo</a>
+            <a class="pca prim" href="https://github.com/CarloshpJunior" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="pca" href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener">Caso</a>
           </div>
         </div>
       </article>
 
-      <article class="pc r d2" data-cat="automacao">
-        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop')">
-          <span class="pc-status s-dev">Em Desenvolvimento</span>
+      <!-- Card 2: SQL Otimização -->
+      <article class="pc r d2" data-cat="analise">
+        <div class="pc-img">
+          <div class="pc-img-inner" style="background-image:url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop')"></div>
+          <span class="pc-status s-prod"><span class="pc-status-dot"></span>Em Produção</span>
+          <span class="pc-cat">SQL</span>
+        </div>
+        <div class="pc-body">
+          <h3 class="pc-title">Otimização de Queries SQL</h3>
+          <div class="psr">
+            <div class="psr-row">
+              <span class="psr-label prob">Problema</span>
+              <span class="psr-text">Relatório levava 8s, afetando 300+ usuários simultâneos</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label sol">Solução</span>
+              <span class="psr-text">Análise de execution plan + índices estratégicos + query refactor</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label res">Resultado</span>
+              <span class="psr-text"><strong>Reduzido para 0.2s (40× mais rápido) | Zero fallbacks</strong></span>
+            </div>
+          </div>
+          <div class="pc-stack">
+            <span class="stag sql">SQL</span>
+            <span class="stag pg">PostgreSQL</span>
+          </div>
+          <div class="pc-impact">
+            <span class="pim"><span class="pim-val">40×</span> mais rápido</span>
+            <span class="pim"><span class="pim-val">300+</span> usuários</span>
+            <span class="pim"><span class="pim-val">8s → 0.2s</span></span>
+          </div>
+          <div class="pc-acts">
+            <a class="pca prim" href="https://github.com/CarloshpJunior" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="pca" href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener">Caso</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: ETL Vendas -->
+      <article class="pc r d3" data-cat="automacao">
+        <div class="pc-img">
+          <div class="pc-img-inner" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop')"></div>
+          <span class="pc-status s-demo"><span class="pc-status-dot"></span>Live Demo</span>
           <span class="pc-cat">Automação</span>
         </div>
         <div class="pc-body">
-          <h3 class="pc-title">ETL de Vendas com Python</h3>
-          <p class="pc-desc">Pipeline para limpeza, transformação e carga de dados de vendas em data warehouse com agendamento automático.</p>
+          <h3 class="pc-title">ETL Automático de Vendas</h3>
+          <div class="psr">
+            <div class="psr-row">
+              <span class="psr-label prob">Problema</span>
+              <span class="psr-text">Relatório manual de 6h/semana com 5% de erro humano</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label sol">Solução</span>
+              <span class="psr-text">Pipeline Python + Airflow + validação automática de qualidade</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label res">Resultado</span>
+              <span class="psr-text"><strong>100% automatizado | 280h/ano poupadas | 0% de erro</strong></span>
+            </div>
+          </div>
           <div class="pc-stack">
-            <span class="stag">Python</span><span class="stag">Airflow</span><span class="stag">PostgreSQL</span><span class="stag">Pandas</span>
+            <span class="stag py">Python</span>
+            <span class="stag af">Airflow</span>
+            <span class="stag pg">PostgreSQL</span>
+            <span class="stag pd">Pandas</span>
+          </div>
+          <div class="pc-impact">
+            <span class="pim"><span class="pim-val">280h/ano</span> poupadas</span>
+            <span class="pim"><span class="pim-val">0%</span> erro</span>
+            <span class="pim"><span class="pim-val">100%</span> auto</span>
           </div>
           <div class="pc-acts">
-            <a class="pca prim" href="https://github.com/CarloshpJunior/etl-vendas" target="_blank" rel="noopener">GitHub →</a>
-            <a class="pca" href="#">Post</a>
+            <a class="pca prim" href="https://github.com/CarloshpJunior/etl-vendas" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="pca" href="https://github.com/CarloshpJunior/etl-vendas" target="_blank" rel="noopener">Demo</a>
           </div>
         </div>
       </article>
 
-      <article class="pc r d3" data-cat="ia">
-        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1200&auto=format&fit=crop')">
-          <span class="pc-status s-dev">Em Desenvolvimento</span>
+      <!-- Card 4: Churn Prediction -->
+      <article class="pc r d4" data-cat="ia">
+        <div class="pc-img">
+          <div class="pc-img-inner" style="background-image:url('https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1200&auto=format&fit=crop')"></div>
+          <span class="pc-status s-git"><span class="pc-status-dot"></span>No GitHub</span>
           <span class="pc-cat">ML / IA</span>
         </div>
         <div class="pc-body">
           <h3 class="pc-title">Classificador de Churn</h3>
-          <p class="pc-desc">Modelo supervisionado para prever churn de clientes com priorização de ações de retenção e dashboard interativo.</p>
+          <div class="psr">
+            <div class="psr-row">
+              <span class="psr-label prob">Problema</span>
+              <span class="psr-text">Sem identificação proativa de clientes em risco de churn</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label sol">Solução</span>
+              <span class="psr-text">XGBoost + SHAP para interpretabilidade + Streamlit para deploy</span>
+            </div>
+            <div class="psr-row">
+              <span class="psr-label res">Resultado</span>
+              <span class="psr-text"><strong>87% acurácia | Impacto potencial: R$ 120k em retenção</strong></span>
+            </div>
+          </div>
           <div class="pc-stack">
-            <span class="stag">Sklearn</span><span class="stag">XGBoost</span><span class="stag">SHAP</span><span class="stag">Streamlit</span>
+            <span class="stag sk">Sklearn</span>
+            <span class="stag xg">XGBoost</span>
+            <span class="stag st">SHAP</span>
+            <span class="stag py">Streamlit</span>
+          </div>
+          <div class="pc-impact">
+            <span class="pim"><span class="pim-val">87%</span> acurácia</span>
+            <span class="pim"><span class="pim-val">R$ 120k</span> potencial</span>
           </div>
           <div class="pc-acts">
-            <a class="pca prim" href="https://github.com/CarloshpJunior/churn-model" target="_blank" rel="noopener">GitHub →</a>
-            <a class="pca" href="#">Relatório</a>
+            <a class="pca prim" href="https://github.com/CarloshpJunior/churn-model" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="pca" href="https://github.com/CarloshpJunior/churn-model" target="_blank" rel="noopener">Relatório</a>
           </div>
         </div>
       </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="wrap">
+    <div class="slabel r" style="text-align:center">Diferenciais</div>
+    <h2 class="stitle r" style="text-align:center">Por que <span>me contratar?</span></h2>
+
+    <div class="diff-g">
+
+      <div class="diff-card r d1">
+        <span class="diff-ic" aria-hidden="true">🏆</span>
+        <div class="diff-title">Visão 360° de Negócio</div>
+        <p class="diff-desc">Passei por varejo → indústria → ERP → dados. Você não precisa explicar o negócio: já entendo vendas, custos e sistemas.</p>
+        <div class="diff-impact">
+          <span class="diff-impact-label">Impacto</span>
+          <span class="diff-impact-text">Análises em CONTEXTO, não em vácuo.</span>
+        </div>
+      </div>
+
+      <div class="diff-card r d2">
+        <span class="diff-ic" aria-hidden="true">💰</span>
+        <div class="diff-title">ROI Mensurável</div>
+        <p class="diff-desc">Não faço dashboards por fazer. Cada análise é movida por impacto — poupar ou ganhar. Newcomfort: R$ 180k identificados.</p>
+        <div class="diff-impact">
+          <span class="diff-impact-label">Impacto</span>
+          <span class="diff-impact-text">Dados que conversam com o CFO.</span>
+        </div>
+      </div>
+
+      <div class="diff-card r d3">
+        <span class="diff-ic" aria-hidden="true">🔧</span>
+        <div class="diff-title">Soluções que Duram</div>
+        <p class="diff-desc">Query lenta? Otimizo. ETL quebrado? Automizo. Dados sujos? Limpo com pipeline. Tenho paciência de craftsman.</p>
+        <div class="diff-impact">
+          <span class="diff-impact-label">Impacto</span>
+          <span class="diff-impact-text">Soluções robustas, manutenção mínima.</span>
+        </div>
+      </div>
+
+      <div class="diff-card r d4">
+        <span class="diff-ic" aria-hidden="true">📈</span>
+        <div class="diff-title">Aprendizado Rápido</div>
+        <p class="diff-desc">Varejo → Indústria → ERP → Analytics. Stack novo? Domino em 2 semanas. Produtivo desde o dia 1, independente do contexto.</p>
+        <div class="diff-impact">
+          <span class="diff-impact-label">Impacto</span>
+          <span class="diff-impact-text">Você não treina = já estou produzindo.</span>
+        </div>
+      </div>
+
+      <div class="diff-card r d5">
+        <span class="diff-ic" aria-hidden="true">🎯</span>
+        <div class="diff-title">Comunicação Clara</div>
+        <p class="diff-desc">Dados complexos viram histórias simples. Diferencio relatório técnico de slide executivo. Seu time entende. Executive alignment garantido.</p>
+        <div class="diff-impact">
+          <span class="diff-impact-label">Impacto</span>
+          <span class="diff-impact-text">Stakeholder align na primeira vez.</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -755,23 +1163,70 @@
 <section id="contato">
   <div class="wrap">
     <div class="ct-wrap">
-      <div class="slabel r" style="text-align:center">Vamos conversar</div>
-      <h2 class="stitle r" style="margin-bottom:16px;text-align:center">Pronto para <span>colaborar?</span></h2>
-      <p class="ct-sub r">Estou disponível para oportunidades como Analista de Dados, consultorias ou projetos colaborativos. Me chame — adoro resolver problemas com dados.</p>
-      <div class="ct-links r">
-        <a class="ct-card" href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener">
-          <div class="ct-ic">💼</div>
-          <div>
-            <div class="ct-sub-l">Rede Profissional</div>
-            <div class="ct-val">LinkedIn</div>
+      <div class="ct-header">
+        <div class="slabel r" style="text-align:center">Vamos conversar</div>
+        <h2 class="stitle r" style="margin-bottom:16px;text-align:center">Vamos conversar <span>AGORA?</span></h2>
+        <p class="ct-sub r">
+          Disponível imediatamente.<br>
+          <strong style="color:var(--teal)">Primeira conversa em até 48h</strong> — me chame que adoro resolver problemas com dados.
+        </p>
+        <div class="ct-badges r">
+          <div class="ct-badge">
+            <span class="ct-badge-dot"></span>
+            Resposta em &lt; 1 hora
           </div>
-        </a>
-        <a class="ct-card" href="https://wa.me/5516992833083" target="_blank" rel="noopener">
-          <div class="ct-ic">💬</div>
-          <div>
+          <div class="ct-badge">
+            Franca, SP — Horário Brasileiro 🇧🇷
+          </div>
+          <div class="ct-badge">
+            Disponível para remoto e presencial
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-grid r">
+        <!-- Primary: WhatsApp -->
+        <a class="ct-card primary" href="https://wa.me/5516992833083?text=Ol%C3%A1%20Carlos%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade!" target="_blank" rel="noopener">
+          <div class="ct-ic teal" aria-hidden="true">💬</div>
+          <div class="ct-body">
             <div class="ct-sub-l">Mensagem Direta</div>
-            <div class="ct-val">WhatsApp</div>
+            <div class="ct-val">Conversar no WhatsApp</div>
+            <div class="ct-note">Respondo em &lt; 1h — mensagem pré-pronta</div>
           </div>
+          <svg class="ct-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="ct-card" href="https://www.linkedin.com/in/carloshpjunior" target="_blank" rel="noopener">
+          <div class="ct-ic blue" aria-hidden="true">💼</div>
+          <div class="ct-body">
+            <div class="ct-sub-l">Rede Profissional</div>
+            <div class="ct-val">Conectar no LinkedIn</div>
+            <div class="ct-note">Envie uma proposta ou mensagem</div>
+          </div>
+          <svg class="ct-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- GitHub -->
+        <a class="ct-card" href="https://github.com/CarloshpJunior" target="_blank" rel="noopener">
+          <div class="ct-ic purple" aria-hidden="true">💻</div>
+          <div class="ct-body">
+            <div class="ct-sub-l">Código Aberto</div>
+            <div class="ct-val">Ver GitHub</div>
+            <div class="ct-note">Projetos, commits e contribuições</div>
+          </div>
+          <svg class="ct-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Download CV -->
+        <a class="ct-card" href="#" id="downloadCV">
+          <div class="ct-ic gold" aria-hidden="true">📄</div>
+          <div class="ct-body">
+            <div class="ct-sub-l">Currículo</div>
+            <div class="ct-val">Download CV (PDF)</div>
+            <div class="ct-note">Atualizado com números reais</div>
+          </div>
+          <svg class="ct-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
       </div>
     </div>
@@ -780,16 +1235,21 @@
 
 <footer>
   Desenvolvido por <span>Carlos Júnior</span> · 2025 · Hospedado no GitHub Pages
+  <div class="ft-update">Portfólio atualizado em Março/2025</div>
 </footer>
 
 <script>
-/* === SCROLL PROGRESS === */
+/* =====================================================================
+   SCROLL PROGRESS
+===================================================================== */
 const prog = document.getElementById('prog');
 window.addEventListener('scroll', () => {
   prog.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
 }, { passive: true });
 
-/* === HAMBURGER === */
+/* =====================================================================
+   HAMBURGER
+===================================================================== */
 const ham = document.getElementById('ham');
 const mMenu = document.getElementById('mMenu');
 const mOv = document.getElementById('mOv');
@@ -804,7 +1264,9 @@ mOv.addEventListener('click', () => openM(false));
 mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => openM(false)));
 window.addEventListener('resize', () => { if (window.innerWidth > 768) openM(false); });
 
-/* === TYPEWRITER === */
+/* =====================================================================
+   TYPEWRITER
+===================================================================== */
 const words = ['Python & Pandas', 'SQL Avançado', 'Power BI', 'Data Analytics', 'Business Intelligence', 'ETL & Pipelines'];
 let wi = 0, ci = 0, del = false;
 const tw = document.getElementById('tw');
@@ -817,7 +1279,9 @@ function type() {
 }
 setTimeout(type, 900);
 
-/* === HERO CANVAS — PARTICLE NETWORK === */
+/* =====================================================================
+   HERO CANVAS — PARTICLE NETWORK with MOUSE REPEL
+===================================================================== */
 (function () {
   const c = document.getElementById('cv');
   const ctx = c.getContext('2d');
@@ -827,13 +1291,30 @@ setTimeout(type, 900);
   function resize() { W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; }
 
   class N {
-    constructor() {
+    constructor() { this.reset(); }
+    reset() {
       this.x = Math.random() * W; this.y = Math.random() * H;
-      this.vx = (Math.random() - .5) * .38; this.vy = (Math.random() - .5) * .38;
-      this.r = Math.random() * 1.6 + .8;
-      this.a = Math.random() * .45 + .15;
+      this.vx = (Math.random() - .5) * .42; this.vy = (Math.random() - .5) * .42;
+      this.r = Math.random() * 1.8 + 1.0;
+      this.a = Math.random() * .55 + .2;
     }
     step() {
+      // Repel from mouse
+      const mx = this.x - mouse.x, my = this.y - mouse.y;
+      const md = Math.sqrt(mx * mx + my * my);
+      if (md < 130 && md > 0) {
+        const force = (130 - md) / 130 * 0.9;
+        this.vx += (mx / md) * force;
+        this.vy += (my / md) * force;
+        // Damp speed
+        const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        if (speed > 3.5) { this.vx = (this.vx / speed) * 3.5; this.vy = (this.vy / speed) * 3.5; }
+      } else {
+        // Gentle deceleration back to normal speed
+        this.vx *= 0.98; this.vy *= 0.98;
+        if (Math.abs(this.vx) < 0.1) this.vx += (Math.random() - .5) * 0.1;
+        if (Math.abs(this.vy) < 0.1) this.vy += (Math.random() - .5) * 0.1;
+      }
       this.x += this.vx; this.y += this.vy;
       if (this.x < 0 || this.x > W) this.vx *= -1;
       if (this.y < 0 || this.y > H) this.vy *= -1;
@@ -842,43 +1323,41 @@ setTimeout(type, 900);
 
   function init() {
     resize();
-    const count = Math.min(90, Math.floor(W * H / 10000));
+    const count = Math.min(110, Math.floor(W * H / 9000));
     nodes = Array.from({ length: count }, () => new N());
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    // Deep background with subtle radial glow at center
     const gr = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * .7);
     gr.addColorStop(0, '#0a0d1e'); gr.addColorStop(1, '#03060e');
     ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H);
 
     for (let i = 0; i < nodes.length; i++) {
-      // Edge to edge
       for (let j = i + 1; j < nodes.length; j++) {
         const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
         const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 148) {
+        if (d < 155) {
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = `rgba(201,151,58,${.18 * (1 - d / 148)})`;
-          ctx.lineWidth = .6;
+          ctx.strokeStyle = `rgba(201,151,58,${.24 * (1 - d / 155)})`;
+          ctx.lineWidth = .7;
           ctx.stroke();
         }
       }
-      // Mouse connect
-      const mx = nodes[i].x - mouse.x, my = nodes[i].y - mouse.y;
-      const md = Math.sqrt(mx * mx + my * my);
-      if (md < 170) {
+      // Show connection lines to mouse (visual only, particles repel)
+      const mxd = nodes[i].x - mouse.x, myd = nodes[i].y - mouse.y;
+      const mdd = Math.sqrt(mxd * mxd + myd * myd);
+      if (mdd < 180) {
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(mouse.x, mouse.y);
-        ctx.strokeStyle = `rgba(0,220,200,${.28 * (1 - md / 170)})`;
-        ctx.lineWidth = .9;
+        ctx.strokeStyle = `rgba(0,220,200,${.22 * (1 - mdd / 180)})`;
+        ctx.lineWidth = .85;
         ctx.stroke();
       }
-      // Node dot
+      // Node dot with subtle glow
       ctx.beginPath();
       ctx.arc(nodes[i].x, nodes[i].y, nodes[i].r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(201,151,58,${nodes[i].a})`;
@@ -897,39 +1376,85 @@ setTimeout(type, 900);
   init(); draw();
 })();
 
-/* === ANIMATED COUNTERS === */
-function animCount(el) {
-  const target = +el.dataset.target;
-  const sfx = el.dataset.sfx || '+';
-  const dur = 1700;
-  const start = performance.now();
-  function upd(now) {
-    const p = Math.min((now - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.floor(ease * target) + (p >= 1 ? sfx : '');
-    if (p < 1) requestAnimationFrame(upd);
-  }
-  requestAnimationFrame(upd);
+/* =====================================================================
+   OVERSHOOT EASING
+===================================================================== */
+function overshootEase(t) {
+  const c1 = 1.70158 * 1.525;
+  return t < .5
+    ? (Math.pow(2 * t, 2) * ((c1 + 1) * 2 * t - c1)) / 2
+    : (Math.pow(2 * t - 2, 2) * ((c1 + 1) * (t * 2 - 2) + c1) + 2) / 2;
 }
 
-/* === INTERSECTION OBSERVER — REVEAL + SKILLS + COUNTERS === */
+/* =====================================================================
+   ANIMATED COUNTERS (with overshoot + stagger)
+===================================================================== */
+function animCount(el, delay = 0) {
+  const target = +el.dataset.target;
+  const sfx = el.dataset.sfx || '';
+  const dur = 1600;
+  let started = false;
+  function start() {
+    if (started) return;
+    started = true;
+    setTimeout(() => {
+      const t0 = performance.now();
+      function upd(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        const eased = overshootEase(p);
+        el.textContent = Math.round(eased * target) + (p >= 1 ? sfx : '');
+        if (p < 1) requestAnimationFrame(upd);
+      }
+      requestAnimationFrame(upd);
+    }, delay);
+  }
+  return start;
+}
+
+/* =====================================================================
+   HERO IMPACT NUMBERS — animate on page load
+===================================================================== */
+window.addEventListener('load', () => {
+  document.querySelectorAll('[data-hero-count]').forEach((el, i) => {
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const target = +el.dataset.target;
+    const dur = 1400;
+    setTimeout(() => {
+      const t0 = performance.now();
+      function upd(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        const eased = overshootEase(p);
+        el.textContent = prefix + Math.round(eased * target) + (p >= 1 ? suffix : '');
+        if (p < 1) requestAnimationFrame(upd);
+      }
+      requestAnimationFrame(upd);
+    }, 800 + i * 150);
+  });
+});
+
+/* =====================================================================
+   INTERSECTION OBSERVER — REVEAL + SKILLS + STAT COUNTERS
+===================================================================== */
 const revealIO = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     e.target.classList.add('on');
     revealIO.unobserve(e.target);
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.r,.rl,.rr').forEach(el => revealIO.observe(el));
 
-// Stats
+// Stats counters with staggered delays
 const statsIO = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
-    e.target.querySelectorAll('.stat-n[data-target]').forEach(animCount);
+    e.target.querySelectorAll('.stat-n[data-target]').forEach((el, i) => {
+      animCount(el, i * 120)();
+    });
     statsIO.unobserve(e.target);
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 document.querySelectorAll('.stats').forEach(el => statsIO.observe(el));
 
 // Skill bars
@@ -941,10 +1466,12 @@ const skillIO = new IntersectionObserver((entries) => {
     });
     skillIO.unobserve(e.target);
   });
-}, { threshold: 0.25 });
+}, { threshold: 0.2 });
 document.querySelectorAll('.sk-block').forEach(el => skillIO.observe(el));
 
-/* === PORTFOLIO FILTER === */
+/* =====================================================================
+   PORTFOLIO FILTER
+===================================================================== */
 const fbtns = document.querySelectorAll('.fbtn');
 const pcards = document.querySelectorAll('.pc');
 fbtns.forEach(btn => {
@@ -965,7 +1492,15 @@ fbtns.forEach(btn => {
     });
   });
 });
+
+/* =====================================================================
+   DOWNLOAD CV PLACEHOLDER
+===================================================================== */
+document.getElementById('downloadCV').addEventListener('click', (e) => {
+  e.preventDefault();
+  // Atualize este link com o caminho real do seu PDF
+  alert('CV em breve disponível para download. Por enquanto, envie uma mensagem via WhatsApp ou LinkedIn!');
+});
 </script>
 </body>
 </html>
-
